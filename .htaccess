@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Redirect all .php requests to a 404 Not Found
+RewriteCond %{REQUEST_FILENAME} \.php$
+RewriteRule ^ - [R=404,L]
+
+# Restrict access to the uploads, views, and framework directories
+RewriteRule ^(uploads|views|framework)/ - [F,L]
